@@ -62,12 +62,14 @@ section { margin-bottom: 3.5rem; }
 .ds-section { border-bottom: 1px solid var(--p3); padding: 1rem; }
 .ds-section:last-child { border-bottom: none; }
 .ds-label { font-size: 0.7rem; color: var(--p3); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.75rem; }
-.entry { display: grid; grid-template-columns: 12ch 1fr; gap: 0 1.5ch; margin-bottom: 1.1rem; font-size: 0.85rem; }
+.entry { display: grid; grid-template-columns: 12ch 1fr; gap: 0 1.5ch; margin-bottom: 1.4rem; font-size: 0.85rem; }
 .entry:last-child { margin-bottom: 0; }
 .entry-date { color: var(--p3); font-size: 0.75rem; padding-top: 0.05em; white-space: nowrap; }
 .entry-title { color: var(--p); }
-.entry-org   { color: var(--p2); font-size: 0.8rem; }
+.entry-org   { color: var(--p2); font-size: 0.8rem; margin-bottom: 0.2rem; }
 .entry-desc  { color: var(--p2); font-size: 0.8rem; margin-top: 0.25rem; }
+.entry-desc li { margin-left: 1.5ch; margin-bottom: 0.2rem; list-style: none; }
+.entry-desc li::before { content: '— '; color: var(--p3); }
 .skill-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 .skill-table td { padding: 0.3rem 0.6rem; vertical-align: top; color: var(--p2); border: 1px solid var(--p3); }
 .skill-table td:first-child { color: var(--p3); width: 16ch; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -75,10 +77,12 @@ section { margin-bottom: 3.5rem; }
 .bar { display: inline-block; width: 8px; height: 8px; border: 1px solid var(--p2); }
 .bar.on { background: var(--p2); }
 .bar.hi { background: var(--p); border-color: var(--p); }
+.bar.off { border-color: var(--p3); }
 .edu-entry { font-size: 0.85rem; margin-bottom: 0.9rem; color: var(--p2); }
 .edu-entry:last-child { margin-bottom: 0; }
 .edu-entry strong { color: var(--p); font-weight: normal; }
 .edu-entry .edu-date { color: var(--p3); font-size: 0.78rem; }
+.edu-entry .edu-sub { color: var(--p3); font-size: 0.78rem; margin-top: 0.15rem; }
 .dl-row { margin-top: 1rem; font-size: 0.82rem; }
 .dl-row a { color: var(--amber); text-decoration: none; border-bottom: 1px dashed var(--amber); }
 .dl-row a:hover { color: var(--p); border-color: var(--p); }
@@ -121,7 +125,6 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
   <line x1="920" y1="80" x2="920" y2="220"/><line x1="920" y1="400" x2="920" y2="560"/>
   <line x1="920" y1="560" x2="920" y2="700"/>
   <line x1="1100" y1="220" x2="1100" y2="400"/><line x1="1100" y1="560" x2="1100" y2="700"/>
-  <!-- Resistors -->
   <polyline points="300,80 305,72 315,88 325,72 335,88 340,80"/>
   <polyline points="500,220 505,212 515,228 525,212 535,228 540,220"/>
   <polyline points="700,400 705,392 715,408 725,392 735,408 740,400"/>
@@ -130,33 +133,27 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
   <polyline points="250,560 255,552 265,568 275,552 285,568 290,560"/>
   <polyline points="350,700 355,692 365,708 375,692 385,708 390,700"/>
   <polyline points="800,700 805,692 815,708 825,692 835,708 840,700"/>
-  <!-- Capacitors -->
   <line x1="120" y1="130" x2="120" y2="145"/><line x1="108" y1="145" x2="132" y2="145"/>
   <line x1="108" y1="152" x2="132" y2="152"/><line x1="120" y1="152" x2="120" y2="167"/>
   <line x1="380" y1="290" x2="380" y2="305"/><line x1="368" y1="305" x2="392" y2="305"/>
   <line x1="368" y1="312" x2="392" y2="312"/><line x1="380" y1="312" x2="380" y2="327"/>
   <line x1="660" y1="450" x2="660" y2="465"/><line x1="648" y1="465" x2="672" y2="465"/>
   <line x1="648" y1="472" x2="672" y2="472"/><line x1="660" y1="472" x2="660" y2="487"/>
-  <!-- Op-amp -->
   <polygon points="460,350 460,450 550,400"/>
   <line x1="440" y1="370" x2="460" y2="370"/><line x1="440" y1="430" x2="460" y2="430"/>
   <line x1="550" y1="400" x2="580" y2="400"/>
   <line x1="448" y1="370" x2="453" y2="370"/><line x1="450" y1="368" x2="450" y2="372"/>
   <line x1="448" y1="430" x2="453" y2="430"/>
-  <!-- Inductors -->
   <path d="M760,220 Q766,210 772,220 Q778,230 784,220 Q790,210 796,220 Q802,230 808,220"/>
   <path d="M1000,400 Q1006,390 1012,400 Q1018,410 1024,400 Q1030,390 1036,400 Q1042,410 1048,400"/>
-  <!-- Transistor -->
   <line x1="1000" y1="60" x2="1000" y2="100"/><line x1="1000" y1="70" x2="1020" y2="60"/>
   <line x1="1000" y1="90" x2="1020" y2="100"/><line x1="1020" y1="55" x2="1020" y2="105"/>
   <line x1="1020" y1="80" x2="1040" y2="80"/>
   <circle cx="1010" cy="80" r="12"/>
-  <!-- Ground symbols -->
   <line x1="120" y1="400" x2="120" y2="415"/><line x1="108" y1="415" x2="132" y2="415"/>
   <line x1="112" y1="420" x2="128" y2="420"/><line x1="116" y1="425" x2="124" y2="425"/>
   <line x1="920" y1="700" x2="920" y2="715"/><line x1="908" y1="715" x2="932" y2="715"/>
   <line x1="912" y1="720" x2="928" y2="720"/><line x1="916" y1="725" x2="924" y2="725"/>
-  <!-- Junction dots -->
   <circle cx="120" cy="80"  r="3" fill="#b8ff8c"/>
   <circle cx="380" cy="220" r="3" fill="#b8ff8c"/>
   <circle cx="660" cy="400" r="3" fill="#b8ff8c"/>
@@ -173,7 +170,7 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
     <div class="site-id">
       <h1>Aedan Brundrett</h1><span class="blink">_</span>
     </div>
-    <p class="tagline">artist-engineer &nbsp;/&nbsp; audio hardware &nbsp;/&nbsp; signal &amp; circuit design</p>
+    <p class="tagline">artist-engineer in the making</p>
     <nav>
       <a href="#about">about</a><span>&nbsp;·&nbsp;</span>
       <a href="#cv">cv</a><span>&nbsp;·&nbsp;</span>
@@ -183,9 +180,8 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
 
   <section id="about">
     <div class="sec-head"><span class="sec-num">§01</span><h2>About</h2></div>
-    <p>I work at the boundary between <strong>engineering rigor and artistic intent</strong> — designing audio hardware, circuits, and instruments where the technical and the expressive are the same thing.</p>
-    <p>Currently based in <strong>Alpine, TX</strong>. Open to roles in audio electronics, hardware R&amp;D, and instrument design.</p>
-    <p><em style="color:var(--p3); font-size:0.82rem;">[replace this with 2–3 sentences in your own voice]</em></p>
+    <p>Engineer and artist working at the intersection of <strong>audio hardware, instrument design, and creative practice</strong>. I build things that sound as good as they work — from cycle-testing rigs to recording studios to the spaces in between.</p>
+    <p>BA Engineering Sciences, Dartmouth College. Currently based in <strong>Alpine, TX</strong>, open to roles in audio electronics, hardware R&amp;D, and instrument design.</p>
   </section>
 
   <section id="cv">
@@ -193,141 +189,219 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
     <div class="datasheet">
       <div class="datasheet-header">
         <span class="part-no">DOCUMENT: AB-CV-2026 &nbsp;|&nbsp; REV. A</span>
-        <span class="part-title">BRUNDRETT, Aedan — Audio Hardware Engineer</span>
+        <span class="part-title">BRUNDRETT, Aedan — Artist-Engineer / Audio Hardware</span>
       </div>
 
+      <!-- EXPERIENCE -->
       <div class="ds-section">
         <div class="ds-label">Work Experience</div>
+
         <div class="entry">
-          <div class="entry-date">20XX–pres.</div>
+          <div class="entry-date">Sep 2025–pres.</div>
           <div class="entry-body">
-            <div class="entry-title">Job Title</div>
-            <div class="entry-org">Company / Studio / Lab — Location</div>
-            <div class="entry-desc">One or two lines about what you did and what made it interesting. Measurable outcomes work well here.</div>
+            <div class="entry-title">Gallery Docent / Visitor Services / Tech Coordinator</div>
+            <div class="entry-org">Judd Foundation &amp; Chinati Foundation — Marfa, TX</div>
+            <div class="entry-desc"><ul>
+              <li>On-site IT support — laptops, WiFi, and server room operations for Chinati.</li>
+              <li>Building a rigorous working knowledge of Donald Judd's visual language and history.</li>
+              <li>Overhauling outbound book shipping with a focus on sustainable packaging.</li>
+              <li>Volunteering to restore native grasslands on Judd's ranch properties.</li>
+            </ul></div>
           </div>
         </div>
+
         <div class="entry">
-          <div class="entry-date">20XX–20XX</div>
+          <div class="entry-date">Jun–Aug 2024</div>
           <div class="entry-body">
-            <div class="entry-title">Job Title</div>
-            <div class="entry-org">Company / Studio / Lab — Location</div>
-            <div class="entry-desc">Describe the work and its impact. Keep it honest and direct.</div>
+            <div class="entry-title">Product Engineering Intern</div>
+            <div class="entry-org">OXO — New York, NY</div>
+            <div class="entry-desc"><ul>
+              <li>Upgraded a motor-driven cycle-testing rig with sensors, touchscreen UI, and modular electronics for more accurate mechanical lifespan measurement.</li>
+              <li>Ran root-cause analysis on prototype and tooling failures; iterated features for durability and manufacturability.</li>
+              <li>Conducted special material research with SVP of Engineering on multimaterial 3D printing and silicone/TPU shore hardness optimisation for gaskets.</li>
+            </ul></div>
           </div>
         </div>
+
         <div class="entry">
-          <div class="entry-date">20XX–20XX</div>
+          <div class="entry-date">Aug–Dec 2023</div>
           <div class="entry-body">
-            <div class="entry-title">Internship / Research / Project Role</div>
-            <div class="entry-org">Organisation</div>
-            <div class="entry-desc">Earlier experience, projects, or anything that shows how you got here.</div>
+            <div class="entry-title">Design Engineering Intern</div>
+            <div class="entry-org">OXO — New York, NY</div>
+            <div class="entry-desc"><ul>
+              <li>Redesigned and built a motor-driven cycle-testing rig for Pop Containers — full SolidWorks assembly/drawing package and first complete prototype.</li>
+              <li>Ran prototyping lab: SolidWorks CAD for enclosure and mechanism mods, 3D printing, machining, assembly, and test.</li>
+              <li>Supported senior engineers across appliance development: mechanism evaluation, DFM, prototype reviews, tooling transitions.</li>
+            </ul></div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2023–Jun 2025</div>
+          <div class="entry-body">
+            <div class="entry-title">Primary Studio Engineer</div>
+            <div class="entry-org">Hopkins Center for the Arts, Dartmouth — Hanover, NH</div>
+            <div class="entry-desc"><ul>
+              <li>Guided musicians in BritTrax Recording Studio through recording and production.</li>
+              <li>Configured professional-grade gear and introduced artists to industry software workflows.</li>
+              <li>Organised a visit by Andrew Jones for a series of talks on technical loudspeaker engineering.</li>
+            </ul></div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Jan 2024</div>
+          <div class="entry-body">
+            <div class="entry-title">Teaching Assistant</div>
+            <div class="entry-org">Thayer School of Engineering, Dartmouth — Hanover, NH</div>
+            <div class="entry-desc"><ul>
+              <li>TA for "Integrated Design: Engineering, Architecture, and Building Technology" — guided students from fundamentals to physical project outcomes.</li>
+            </ul></div>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-date">Aug–Nov 2020</div>
+          <div class="entry-body">
+            <div class="entry-title">Mobile Bicycle Mechanic</div>
+            <div class="entry-org">Urban Cyclery — East Orange, NJ</div>
+            <div class="entry-desc"><ul>
+              <li>Tuned bicycles in shop and mobile van; developed need-finding skills guiding customers to the right equipment.</li>
+            </ul></div>
           </div>
         </div>
       </div>
 
+      <!-- EDUCATION -->
       <div class="ds-section">
         <div class="ds-label">Education</div>
+
         <div class="edu-entry">
-          <div><strong>Degree, Field of Study</strong></div>
-          <div>University Name</div>
-          <div class="edu-date">Graduated: 20XX</div>
+          <div><strong>BA, Engineering Sciences — Minor in Music</strong></div>
+          <div>Dartmouth College, Hanover, NH</div>
+          <div class="edu-date">June 2025 &nbsp;|&nbsp; GPA 3.82 / 4.0</div>
+          <div class="edu-sub">Coursework: Sonic Space and Form · Electrical Systems · Autonomous Musical Bodies · Product Design &amp; Manufacturing</div>
         </div>
+
         <div class="edu-entry">
-          <div><strong>Relevant coursework or second qualification</strong></div>
-          <div>Institution</div>
-          <div class="edu-date">20XX</div>
+          <div><strong>German-Engineering "Green City" Study Abroad</strong></div>
+          <div>Berlin, Germany</div>
+          <div class="edu-date">March–June 2024</div>
+          <div class="edu-sub">Full-immersion sustainable engineering programme; frequented SchneidersLaden for modular synthesis exploration.</div>
         </div>
       </div>
 
+      <!-- SKILLS -->
       <div class="ds-section">
         <div class="ds-label">Electrical Characteristics — Skills</div>
         <table class="skill-table">
           <tr>
-            <td>Analog Design</td>
-            <td>op-amp circuits, filters, VCAs, audio I/O
+            <td>Engineering SW</td>
+            <td>SolidWorks, prototyping, DFM, mechanism design
               <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>PCB Layout</td>
-            <td>KiCad, Altium, 4-layer boards, RF-aware routing
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Embedded / FW</td>
-            <td>C/C++, ARM Cortex-M, RTOS, MIDI, I²S/SPI/I²C
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>DSP / Audio SW</td>
-            <td>Python, JUCE, Max/MSP, Ableton Live
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Acoustics</td>
-            <td>measurement, room treatment, transducer design
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span>
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
               </div>
             </td>
           </tr>
           <tr>
             <td>Fabrication</td>
-            <td>SMT soldering, PCB milling, reflow, bench debug
+            <td>3D printing, woodshop, machining, assembly &amp; test
               <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span>
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Embedded / HW</td>
+            <td>Arduino microcontrollers, sensor integration, electronics
+              <div class="bar-wrap">
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Audio / Studio</td>
+            <td>Studio recording, live sound, signal chain, gear setup
+              <div class="bar-wrap">
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>DAW / Production</td>
+            <td>Ableton Live, Logic Pro, Rekordbox
+              <div class="bar-wrap">
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Instrument</td>
+            <td>Bb clarinet (8 yrs classical), modular synthesis
+              <div class="bar-wrap">
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Languages</td>
+            <td>English (fluent) · Spanish (basic) · German (basic)
+              <div class="bar-wrap">
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span>&nbsp;/&nbsp;
+                <span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span>
               </div>
             </td>
           </tr>
         </table>
-        <p style="font-size:0.72rem; color:var(--p3); margin-top:0.75rem;">█ = proficient &nbsp; ▓ = working knowledge &nbsp;&nbsp; adjust bars to your actual levels</p>
+        <p style="font-size:0.72rem; color:var(--p3); margin-top:0.75rem;">█ = proficient &nbsp; ▓ = working knowledge &nbsp; □ = developing</p>
       </div>
 
+      <!-- SERVICE -->
       <div class="ds-section">
-        <div class="ds-label">Selected Projects</div>
+        <div class="ds-label">Service &amp; Recognition</div>
+
         <div class="entry">
-          <div class="entry-date">20XX</div>
+          <div class="entry-date">Apr 2025–pres.</div>
           <div class="entry-body">
-            <div class="entry-title">Project Name</div>
-            <div class="entry-desc">What it is, how it works, what is interesting about it technically or artistically.</div>
+            <div class="entry-title">Member — Tau Beta Pi Engineering Honor Society</div>
+            <div class="entry-org">Dartmouth College</div>
+            <div class="entry-desc"><ul>
+              <li>Recognised for academic achievement and mentorship of younger engineers.</li>
+            </ul></div>
           </div>
         </div>
+
         <div class="entry">
-          <div class="entry-date">20XX</div>
+          <div class="entry-date">2014–2021</div>
           <div class="entry-body">
-            <div class="entry-title">Project Name</div>
-            <div class="entry-desc">Custom effects unit? Hardware instrument? Research prototype? Put it here.</div>
+            <div class="entry-title">Eagle Scout / Senior Patrol Leader</div>
+            <div class="entry-org">Scouting America — Austin, TX &amp; Montclair, NJ</div>
+            <div class="entry-desc"><ul>
+              <li>Eagle Project: designed and built a chicken run for Montclair Community Farms.</li>
+              <li>Served as Senior Patrol Leader for Troop 13, restructuring it to be scout-led.</li>
+            </ul></div>
           </div>
         </div>
       </div>
 
+      <!-- INTERESTS -->
+      <div class="ds-section">
+        <div class="ds-label">Non-Technical Parameters</div>
+        <p style="color:var(--p2); font-size:0.85rem;">Backpacking &nbsp;·&nbsp; Classic car repair &nbsp;·&nbsp; Contemporary art &nbsp;·&nbsp; River paddling &nbsp;·&nbsp; Modular synthesis</p>
+      </div>
+
+      <!-- DOWNLOAD -->
       <div class="ds-section">
         <div class="ds-label">Full Document</div>
         <div class="dl-row">&gt;&gt; <a href="cv.pdf">Download CV as PDF</a> &mdash; <span style="color:var(--p3);">cv.pdf</span></div>
       </div>
-    </div>
-  </section>
 
-  <section id="contact">
-    <div class="sec-head"><span class="sec-num">§03</span><h2>Contact</h2></div>
-    <ul class="contact-list">
-      <li>linkedin: <a href="https://linkedin.com/in/aedanbrundrett" target="_blank">linkedin.com/in/yourhandle</a></li>
-    </ul>
+    </div>
   </section>
 
   <footer>
     <span>Aedan Brundrett — 2026</span>
-    <span>Built with Claude</span>
+    <span>Built with AI</span>
   </footer>
 </div>
 </body>
