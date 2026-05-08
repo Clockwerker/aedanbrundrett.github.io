@@ -73,11 +73,6 @@ section { margin-bottom: 3.5rem; }
 .skill-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 .skill-table td { padding: 0.3rem 0.6rem; vertical-align: top; color: var(--p2); border: 1px solid var(--p3); }
 .skill-table td:first-child { color: var(--p3); width: 16ch; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.bar-wrap { display: flex; align-items: center; gap: 0.5ch; margin-top: 0.3rem; }
-.bar { display: inline-block; width: 8px; height: 8px; border: 1px solid var(--p2); }
-.bar.on { background: var(--p2); }
-.bar.hi { background: var(--p); border-color: var(--p); }
-.bar.off { border-color: var(--p3); }
 .edu-entry { font-size: 0.85rem; margin-bottom: 0.9rem; color: var(--p2); }
 .edu-entry:last-child { margin-bottom: 0; }
 .edu-entry strong { color: var(--p); font-weight: normal; }
@@ -174,21 +169,19 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
     <nav>
       <a href="#about">about</a><span>&nbsp;·&nbsp;</span>
       <a href="#cv">cv</a><span>&nbsp;·&nbsp;</span>
-      <a href="#contact">contact</a>
     </nav>
   </header>
 
   <section id="about">
     <div class="sec-head"><span class="sec-num">§01</span><h2>About</h2></div>
-    <p>Engineer and artist working at the intersection of <strong>audio hardware, instrument design, and creative practice</strong>. I build things that sound as good as they work — from cycle-testing rigs to recording studios to the spaces in between.</p>
-    <p>BA Engineering Sciences, Dartmouth College. Currently based in <strong>Alpine, TX</strong>, open to roles in audio electronics, hardware R&amp;D, and instrument design.</p>
+    <p>Multidisciplinary engineer and artist working at the intersection of <strong>audio hardware, instrument design, and creative practice</strong>.</p>
   </section>
 
   <section id="cv">
     <div class="sec-head"><span class="sec-num">§02</span><h2>Curriculum Vitae</h2></div>
     <div class="datasheet">
       <div class="datasheet-header">
-        <span class="part-no">DOCUMENT: AB-CV-2026 &nbsp;|&nbsp; REV. A</span>
+        <span class="part-no">DOCUMENT: AB-CV-2026 &nbsp;|&nbsp; REV. E</span>
         <span class="part-title">BRUNDRETT, Aedan — Artist-Engineer / Audio Hardware</span>
       </div>
 
@@ -293,67 +286,37 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
 
       <!-- SKILLS -->
       <div class="ds-section">
-        <div class="ds-label">Electrical Characteristics — Skills</div>
+          <div class="ds-label">Electrical Characteristics — Skills</div>
         <table class="skill-table">
           <tr>
             <td>Engineering SW</td>
-            <td>SolidWorks, prototyping, DFM, mechanism design
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>SolidWorks, prototyping, DFM, mechanism design</td>
           </tr>
           <tr>
             <td>Fabrication</td>
-            <td>3D printing, woodshop, machining, assembly &amp; test
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>3D printing, woodshop, machining, assembly &amp; test</td>
           </tr>
           <tr>
             <td>Embedded / HW</td>
-            <td>Arduino microcontrollers, sensor integration, electronics
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>Arduino microcontrollers, sensor integration, electronics</td>
           </tr>
           <tr>
             <td>Audio / Studio</td>
-            <td>Studio recording, live sound, signal chain, gear setup
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>Studio recording, live sound, signal chain, gear setup</td>
           </tr>
           <tr>
             <td>DAW / Production</td>
-            <td>Ableton Live, Logic Pro, Rekordbox
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>Ableton Live, Logic Pro, Rekordbox</td>
           </tr>
           <tr>
             <td>Instrument</td>
-            <td>Bb clarinet (8 yrs classical), modular synthesis
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>Bb clarinet (8 yrs classical), modular synthesis</td>
           </tr>
           <tr>
             <td>Languages</td>
-            <td>English (fluent) · Spanish (basic) · German (basic)
-              <div class="bar-wrap">
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span><span class="bar hi"></span>&nbsp;/&nbsp;
-                <span class="bar hi"></span><span class="bar hi"></span><span class="bar on"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span><span class="bar off"></span>
-              </div>
-            </td>
+            <td>English (fluent) &nbsp;·&nbsp; Spanish (basic) &nbsp;·&nbsp; German (basic)</td>
           </tr>
         </table>
-        <p style="font-size:0.72rem; color:var(--p3); margin-top:0.75rem;">█ = proficient &nbsp; ▓ = working knowledge &nbsp; □ = developing</p>
       </div>
 
       <!-- SERVICE -->
@@ -401,7 +364,7 @@ footer { border-top: 1px solid var(--p3); padding-top: 1.5rem; font-size: 0.75re
 
   <footer>
     <span>Aedan Brundrett — 2026</span>
-    <span>Built with AI</span>
+    <span>Built in conjunction with AI</span>
   </footer>
 </div>
 </body>
